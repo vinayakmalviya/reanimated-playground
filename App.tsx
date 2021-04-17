@@ -17,6 +17,7 @@ const App = () => {
       <View style={styles.container}>
         <Text style={styles.text}>Reanimated Playground</Text>
       </View>
+      <View style={{ height: 12, position: 'absolute' }} />
     </SafeAreaView>
   );
 };
