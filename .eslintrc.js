@@ -22,5 +22,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 2,
     'import/no-duplicates': 2,
     'import/no-useless-path-segments': 2,
+    'no-unsused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 0,
   },
 };
