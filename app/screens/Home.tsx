@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, Text, TouchableOpacity } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useTheme } from 'react-native-paper';
 
 import { StackNavigatorParamsList } from './Navigator';
 
@@ -11,14 +12,24 @@ type HomeProps = {
 };
 
 const Home = ({ navigation }: HomeProps) => {
+  const theme = useTheme();
+
   return (
-    <SafeAreaView style={{ flex: 1, padding: 16 }}>
-      <StatusBar backgroundColor="#ABABAB" barStyle="dark-content" />
+    <SafeAreaView
+      style={{
+        flex: 1,
+        padding: 16,
+        backgroundColor: theme.colors.background,
+      }}>
+      <StatusBar
+        backgroundColor={theme.colors.background}
+        barStyle={theme.dark ? 'light-content' : 'dark-content'}
+      />
       <Text
         style={{
           fontFamily: 'Quicksand-Bold',
           fontSize: 24,
-          color: '#2b2d42',
+          color: '#3253B6',
         }}>
         Home
       </Text>
