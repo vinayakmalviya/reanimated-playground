@@ -1,14 +1,16 @@
 import React, { useMemo } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useTheme } from 'react-native-paper';
 
 import Home from './Home';
 import Transitions from './Transitions';
-import { useTheme } from 'react-native-paper';
+import BasicTransition from './transitions/BasicTransition';
 
 export type StackNavigatorParamsList = {
   Home: undefined;
   Transitions: undefined;
+  BasicTransition: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -44,6 +46,7 @@ const Navigator = () => {
         }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Transitions" component={Transitions} />
+        <Stack.Screen name="BasicTransition" component={BasicTransition} />
       </Stack.Navigator>
     </NavigationContainer>
   );
