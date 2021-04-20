@@ -51,7 +51,10 @@ const Transitions: React.FC<TransitionsProps> = ({ navigation }) => {
   return (
     <ScreenContainer header={header} style={{ padding: 16 }}>
       <FlatList
-        data={[{ name: 'Basic Transition', navigate: 'BasicTransition' }]}
+        data={[
+          { name: 'Basic Transition', navigate: 'BasicTransition' },
+          { name: 'Animated Switch', navigate: 'AnimatedSwitch' },
+        ]}
         renderItem={renderItem}
         keyExtractor={item => item.name}
         ItemSeparatorComponent={Divider}

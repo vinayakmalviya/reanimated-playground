@@ -6,11 +6,13 @@ import { useTheme } from 'react-native-paper';
 import Home from './Home';
 import Transitions from './Transitions';
 import BasicTransition from './transitions/BasicTransition';
+import AnimatedSwitch from './transitions/AnimatedSwitch';
 
 export type StackNavigatorParamsList = {
   Home: undefined;
   Transitions: undefined;
   BasicTransition: undefined;
+  AnimatedSwitch: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -47,6 +49,7 @@ const Navigator = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Transitions" component={Transitions} />
         <Stack.Screen name="BasicTransition" component={BasicTransition} />
+        <Stack.Screen name="AnimatedSwitch" component={AnimatedSwitch} />
       </Stack.Navigator>
     </NavigationContainer>
   );

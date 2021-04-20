@@ -6,6 +6,7 @@ import Body from './Typography/Body';
 import Caption from './Typography/Caption';
 import Button from './Button';
 import CreditCard from './Cards/CreditCard';
+import Switch from './Switch';
 
 export {
   ScreenContainer,
@@ -16,4 +17,5 @@ export {
   Caption,
   Button,
   CreditCard,
+  Switch,
 };
