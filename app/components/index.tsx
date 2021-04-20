@@ -4,6 +4,7 @@ import Title from './Typography/Title';
 import Subtitle from './Typography/Subtitle';
 import Body from './Typography/Body';
 import Caption from './Typography/Caption';
+import Button from './Button';
 import CreditCard from './Cards/CreditCard';
 
 export {
@@ -13,5 +14,6 @@ export {
   Subtitle,
   Body,
   Caption,
+  Button,
   CreditCard,
 };

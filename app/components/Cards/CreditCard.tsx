@@ -5,13 +5,11 @@ import Body from '../Typography/Body';
 import Caption from '../Typography/Caption';
 import Title from '../Typography/Title';
 
-type Networks = 'visa' | 'mastercard';
-
 interface CreditCardProps extends ViewProps {
   balance: string;
   cardNumber: string;
   expiry: string;
-  paymentNetwork: Networks;
+  paymentNetwork: 'visa' | 'mastercard';
   backgroundColor?: string;
   darkText?: boolean;
 }
@@ -47,18 +45,17 @@ const CreditCard: React.FC<CreditCardProps> = ({
           alignItems: 'center',
           marginTop: -4,
         }}>
-        <Title style={{ color: darkText ? '#333333' : '#FFFFFF' }}>
-          {balance}
-        </Title>
+        <Caption
+          style={{
+            textTransform: 'uppercase',
+            color: darkText ? '#333333' : '#FFFFFF',
+          }}>
+          Reanimated{'\n'}Bank
+        </Caption>
         <View style={{ flex: 1, alignItems: 'flex-end' }}>
-          <Caption
-            style={{
-              textAlign: 'center',
-              textTransform: 'uppercase',
-              color: darkText ? '#333333' : '#FFFFFF',
-            }}>
-            Reanimated{'\n'}Bank
-          </Caption>
+          <Title style={{ color: darkText ? '#333333' : '#FFFFFF' }}>
+            {balance}
+          </Title>
         </View>
       </View>
       <View style={{ flex: 1, justifyContent: 'flex-end' }}>
