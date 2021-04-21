@@ -1,11 +1,12 @@
 import React, { useCallback, useMemo } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Divider, List } from 'react-native-paper';
 
 import { ScreenContainer } from '../components';
-
 import { StackNavigatorParamsList } from './Navigator';
-import { Divider, List } from 'react-native-paper';
+
+import transistions from './transitions/transitonsList';
 
 type TransitionsNavigationProp = StackNavigationProp<
   StackNavigatorParamsList,
@@ -51,10 +52,7 @@ const Transitions: React.FC<TransitionsProps> = ({ navigation }) => {
   return (
     <ScreenContainer header={header} style={{ padding: 16 }}>
       <FlatList
-        data={[
-          { name: 'Basic Transition', navigate: 'BasicTransition' },
-          { name: 'Animated Switch', navigate: 'AnimatedSwitch' },
-        ]}
+        data={transistions}
         renderItem={renderItem}
         keyExtractor={item => item.name}
         ItemSeparatorComponent={Divider}

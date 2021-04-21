@@ -7,6 +7,7 @@ import Caption from './Typography/Caption';
 import Button from './Button';
 import CreditCard from './Cards/CreditCard';
 import Switch from './Switch';
+import Checkbox from './Checkbox';
 
 export {
   ScreenContainer,
@@ -18,4 +19,5 @@ export {
   Button,
   CreditCard,
   Switch,
+  Checkbox,
 };
