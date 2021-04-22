@@ -8,6 +8,7 @@ import Transitions from './Transitions';
 import BasicTransition from './transitions/BasicTransition';
 import AnimatedSwitch from './transitions/AnimatedSwitch';
 import AnimatedCheckbox from './transitions/AnimatedCheckbox';
+import AnimatedTabbar from './transitions/AnimatedTabbar';
 
 export type StackNavigatorParamsList = {
   Home: undefined;
@@ -15,6 +16,7 @@ export type StackNavigatorParamsList = {
   BasicTransition: undefined;
   AnimatedSwitch: undefined;
   AnimatedCheckbox: undefined;
+  AnimatedTabbar: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -53,6 +55,7 @@ const Navigator = () => {
         <Stack.Screen name="BasicTransition" component={BasicTransition} />
         <Stack.Screen name="AnimatedSwitch" component={AnimatedSwitch} />
         <Stack.Screen name="AnimatedCheckbox" component={AnimatedCheckbox} />
+        <Stack.Screen name="AnimatedTabbar" component={AnimatedTabbar} />
       </Stack.Navigator>
     </NavigationContainer>
   );

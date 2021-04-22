@@ -7,6 +7,7 @@ const transitions: {
   { name: 'Basic Transition', navigate: 'BasicTransition' },
   { name: 'Animated Switch', navigate: 'AnimatedSwitch' },
   { name: 'Animated Checkbox', navigate: 'AnimatedCheckbox' },
+  { name: 'Animated Tabbar', navigate: 'AnimatedTabbar' },
 ];
 
 export default transitions;

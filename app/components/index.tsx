@@ -8,6 +8,7 @@ import Button from './Button';
 import CreditCard from './Cards/CreditCard';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
+import Tabbar from './Tabbar';
 
 export {
   ScreenContainer,
@@ -20,4 +21,5 @@ export {
   CreditCard,
   Switch,
   Checkbox,
+  Tabbar,
 };
