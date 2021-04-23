@@ -6,6 +6,7 @@ import Body from './Typography/Body';
 import Caption from './Typography/Caption';
 import Button from './Button';
 import AnimatedButton from './Button/AnimatedButton';
+import GestureButton from './Button/GestureButton';
 import CreditCard from './Cards/CreditCard';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
@@ -20,6 +21,7 @@ export {
   Caption,
   Button,
   AnimatedButton,
+  GestureButton,
   CreditCard,
   Switch,
   Checkbox,

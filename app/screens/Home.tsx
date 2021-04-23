@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native-paper';
 
-import { ScreenContainer } from '../components';
+import { GestureButton, ScreenContainer } from '../components';
 
 import { StackNavigatorParamsList } from './Navigator';
 
@@ -16,20 +16,20 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
   const header = useMemo(
     () => ({
       title: 'Home',
-      actions: [
-        {
-          icon: 'firework',
-          color: 'salmon',
-          onPress: () => navigation.navigate('Transitions'),
-        },
-      ],
     }),
-    [navigation],
+    [],
   );
 
   return (
     <ScreenContainer header={header} style={{ padding: 16 }}>
       <Text>Welcome to Reanimated Playground</Text>
+      <GestureButton
+        style={{ marginTop: 16 }}
+        onPress={() => {
+          navigation.navigate('Transitions');
+        }}>
+        Transitions
+      </GestureButton>
     </ScreenContainer>
   );
 };
