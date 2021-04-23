@@ -5,6 +5,7 @@ import Subtitle from './Typography/Subtitle';
 import Body from './Typography/Body';
 import Caption from './Typography/Caption';
 import Button from './Button';
+import AnimatedButton from './Button/AnimatedButton';
 import CreditCard from './Cards/CreditCard';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
@@ -18,6 +19,7 @@ export {
   Body,
   Caption,
   Button,
+  AnimatedButton,
   CreditCard,
   Switch,
   Checkbox,
