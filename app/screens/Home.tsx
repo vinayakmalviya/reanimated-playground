@@ -37,7 +37,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
         primaryColor={theme.colors.accent}
         secondaryColor="salmon"
         onPress={() => {
-          navigation.navigate('Transitions');
+          navigation.navigate('Gestures');
         }}>
         Gestures
       </GestureButton>

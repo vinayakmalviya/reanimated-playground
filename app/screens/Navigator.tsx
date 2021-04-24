@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useTheme } from 'react-native-paper';
 
 import Home from './Home';
+
 import Transitions from './Transitions';
 import BasicTransition from './transitions/BasicTransition';
 import AnimatedSwitch from './transitions/AnimatedSwitch';
@@ -11,14 +12,19 @@ import AnimatedCheckbox from './transitions/AnimatedCheckbox';
 import AnimatedTabbar from './transitions/AnimatedTabbar';
 import AnimatedButtonScreen from './transitions/AnimatedButton';
 
+import Gestures from './Gestures';
+import BasicPanGesture from './gestures/BasicPanGesture';
+
 export type StackNavigatorParamsList = {
   Home: undefined;
   Transitions: undefined;
+  Gestures: undefined;
   BasicTransition: undefined;
   AnimatedSwitch: undefined;
   AnimatedCheckbox: undefined;
   AnimatedTabbar: undefined;
   AnimatedButton: undefined;
+  BasicPanGesture: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -54,11 +60,13 @@ const Navigator = () => {
         }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Transitions" component={Transitions} />
+        <Stack.Screen name="Gestures" component={Gestures} />
         <Stack.Screen name="BasicTransition" component={BasicTransition} />
         <Stack.Screen name="AnimatedSwitch" component={AnimatedSwitch} />
         <Stack.Screen name="AnimatedCheckbox" component={AnimatedCheckbox} />
         <Stack.Screen name="AnimatedTabbar" component={AnimatedTabbar} />
         <Stack.Screen name="AnimatedButton" component={AnimatedButtonScreen} />
+        <Stack.Screen name="BasicPanGesture" component={BasicPanGesture} />
       </Stack.Navigator>
     </NavigationContainer>
   );
