@@ -1,7 +1,8 @@
-import React from 'react';
-import { SafeAreaView, StatusBar, Text, TouchableOpacity } from 'react-native';
+import React, { useMemo } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useTheme } from 'react-native-paper';
+import { Text } from 'react-native-paper';
+
+import { GestureButton, ScreenContainer } from '../components';
 
 import { StackNavigatorParamsList } from './Navigator';
 
@@ -11,43 +12,25 @@ type HomeProps = {
   navigation: HomeNavigationProp;
 };
 
-const Home = ({ navigation }: HomeProps) => {
-  const theme = useTheme();
+const Home: React.FC<HomeProps> = ({ navigation }) => {
+  const header = useMemo(
+    () => ({
+      title: 'Home',
+    }),
+    [],
+  );
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        padding: 16,
-        backgroundColor: theme.colors.background,
-      }}>
-      <StatusBar
-        backgroundColor={theme.colors.background}
-        barStyle={theme.dark ? 'light-content' : 'dark-content'}
-      />
-      <Text
-        style={{
-          fontFamily: 'Quicksand-Bold',
-          fontSize: 24,
-          color: '#3253B6',
-        }}>
-        Home
-      </Text>
-      <TouchableOpacity
+    <ScreenContainer header={header} style={{ padding: 16 }}>
+      <Text>Welcome to Reanimated Playground</Text>
+      <GestureButton
+        style={{ marginTop: 16 }}
         onPress={() => {
           navigation.navigate('Transitions');
         }}>
-        <Text
-          style={{
-            fontFamily: 'Quicksand-Regular',
-            fontSize: 16,
-            color: 'salmon',
-            marginTop: 12,
-          }}>
-          Go to Transitions
-        </Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+        Transitions
+      </GestureButton>
+    </ScreenContainer>
   );
 };
 

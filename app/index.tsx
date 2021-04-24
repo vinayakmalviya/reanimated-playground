@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import {
   DefaultTheme,
+  DarkTheme,
   configureFonts,
   Provider as PaperProvider,
 } from 'react-native-paper';
@@ -34,11 +35,13 @@ const lightTheme = {
   fonts: configureFonts(fontConfig),
   dark: false,
   mode: 'adaptive' as const,
+  roundness: 8,
   colors: {
     ...DefaultTheme.colors,
     primary: '#3253B6',
     accent: '#31B4A9',
     background: '#EDF5FC',
+    surface: '#EDF5FC',
     text: '#333333',
     textLight: '#525252',
     error: '#EA0B43',
@@ -46,15 +49,17 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  ...DefaultTheme,
+  ...DarkTheme,
   fonts: configureFonts(fontConfig),
   dark: true,
   mode: 'adaptive' as const,
+  roundness: 8,
   colors: {
-    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
     primary: '#3253B6',
     accent: '#31B4A9',
     background: '#121212',
+    surface: '#121212',
     text: '#FFFFFF',
     textLight: '#F1F1F1',
     error: '#EA0B43',

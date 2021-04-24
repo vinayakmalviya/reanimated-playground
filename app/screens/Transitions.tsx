@@ -1,9 +1,12 @@
-import React from 'react';
-import { SafeAreaView, StatusBar, Text, TouchableOpacity } from 'react-native';
+import React, { useCallback, useMemo } from 'react';
+import { FlatList, ListRenderItem } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useTheme } from 'react-native-paper';
+import { Divider, List } from 'react-native-paper';
 
+import { ScreenContainer } from '../components';
 import { StackNavigatorParamsList } from './Navigator';
+
+import transistions from './transitions/transitonsList';
 
 type TransitionsNavigationProp = StackNavigationProp<
   StackNavigatorParamsList,
@@ -14,43 +17,47 @@ type TransitionsProps = {
   navigation: TransitionsNavigationProp;
 };
 
-const Transitions = ({ navigation }: TransitionsProps) => {
-  const theme = useTheme();
+const Transitions: React.FC<TransitionsProps> = ({ navigation }) => {
+  const header = useMemo(
+    () => ({
+      title: 'Transitions',
+      actions: [
+        {
+          icon: 'home',
+          color: 'salmon',
+          onPress: () => navigation.navigate('Home'),
+        },
+      ],
+    }),
+    [navigation],
+  );
+
+  const renderItem: ListRenderItem<{
+    name: string;
+    navigate: keyof StackNavigatorParamsList;
+  }> = useCallback(
+    ({ item: { name, navigate } }) => (
+      <List.Item
+        title={name}
+        titleStyle={{ fontFamily: 'Quicksand-Medium' }}
+        right={props => <List.Icon {...props} icon="chevron-right" />}
+        onPress={() => {
+          navigation.navigate(navigate);
+        }}
+      />
+    ),
+    [navigation],
+  );
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        padding: 16,
-        backgroundColor: theme.colors.background,
-      }}>
-      <StatusBar
-        backgroundColor={theme.colors.background}
-        barStyle={theme.dark ? 'light-content' : 'dark-content'}
+    <ScreenContainer header={header} style={{ padding: 16 }}>
+      <FlatList
+        data={transistions}
+        renderItem={renderItem}
+        keyExtractor={item => item.name}
+        ItemSeparatorComponent={Divider}
       />
-      <Text
-        style={{
-          fontFamily: 'Quicksand-Bold',
-          fontSize: 24,
-          color: '#3253B6',
-        }}>
-        Transitions
-      </Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('Home');
-        }}>
-        <Text
-          style={{
-            fontFamily: 'Quicksand-Regular',
-            fontSize: 16,
-            color: 'salmon',
-            marginTop: 12,
-          }}>
-          Go to Home
-        </Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+    </ScreenContainer>
   );
 };
 
