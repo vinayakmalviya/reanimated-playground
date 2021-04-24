@@ -7,6 +7,7 @@ import {
 import { useTheme } from 'react-native-paper';
 import Animated, {
   Easing,
+  interpolate,
   interpolateColor,
   runOnJS,
   useAnimatedGestureHandler,
@@ -18,11 +19,15 @@ import Animated, {
 import Body from '../Typography/Body';
 
 interface GestureButtonProps extends ViewProps {
+  primaryColor?: string;
+  secondaryColor?: string;
   onPress?: () => void;
 }
 
 const GestureButton: React.FC<GestureButtonProps> = ({
   style,
+  primaryColor = '#3253B6',
+  secondaryColor = '#31B4A9',
   onPress = () => null,
   children,
 }) => {
@@ -57,8 +62,9 @@ const GestureButton: React.FC<GestureButtonProps> = ({
     backgroundColor: interpolateColor(
       transition.value,
       [0, 1],
-      [theme.colors.primary, theme.colors.accent],
+      [primaryColor, secondaryColor],
     ),
+    elevation: interpolate(transition.value, [0, 1], [2, 8]),
   }));
 
   const animatedOpacity = useAnimatedStyle(() => ({
@@ -74,6 +80,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
               padding: 16,
               minHeight: 168,
               borderRadius: theme.roundness,
+              elevation: 2,
             },
             animatedStyle,
           ]}>
@@ -83,6 +90,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
               textTransform: 'uppercase',
               letterSpacing: 0.48,
               fontFamily: 'Quicksand-SemiBold',
+              color: '#FFFFFF',
             }}>
             {children}
           </Body>
@@ -107,6 +115,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
                   marginRight: 6,
                   fontSize: 18,
                   fontFamily: 'Quicksand-Medium',
+                  color: '#FFFFFF',
                 }}>
                 at
               </Body>
@@ -116,6 +125,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
                   letterSpacing: 0.48,
                   fontFamily: 'Quicksand-Bold',
                   fontSize: 48,
+                  color: '#FFFFFF',
                 }}>
                 60 FPS
               </Body>
