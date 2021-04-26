@@ -13,6 +13,7 @@ import Tabbar from './Tabbar';
 
 import GestureButton from './Button/GestureButton';
 import DraggableSwitch from './Switch/DraggableSwitch';
+import CircularSlider from './Slider';
 
 export {
   ScreenContainer,
@@ -29,4 +30,5 @@ export {
   Tabbar,
   GestureButton,
   DraggableSwitch,
+  CircularSlider,
 };

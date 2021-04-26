@@ -6,6 +6,7 @@ const transitions: {
 }[] = [
   { name: 'Basic Pan Gesture', navigate: 'BasicPanGesture' },
   { name: 'Draggable Switch', navigate: 'DraggableSwitch' },
+  { name: 'Circular Slider', navigate: 'CircularSlider' },
 ];
 
 export default transitions;

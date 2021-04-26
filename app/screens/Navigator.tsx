@@ -15,6 +15,7 @@ import AnimatedButtonScreen from './transitions/AnimatedButton';
 import Gestures from './Gestures';
 import BasicPanGesture from './gestures/BasicPanGesture';
 import DraggableSwitchScreen from './gestures/DraggableSwitchScreen';
+import CircularSliderScreen from './gestures/CircularSliderScreen';
 
 export type StackNavigatorParamsList = {
   Home: undefined;
@@ -27,6 +28,7 @@ export type StackNavigatorParamsList = {
   AnimatedButton: undefined;
   BasicPanGesture: undefined;
   DraggableSwitch: undefined;
+  CircularSlider: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -73,6 +75,7 @@ const Navigator = () => {
           name="DraggableSwitch"
           component={DraggableSwitchScreen}
         />
+        <Stack.Screen name="CircularSlider" component={CircularSliderScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
