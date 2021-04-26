@@ -14,6 +14,7 @@ import AnimatedButtonScreen from './transitions/AnimatedButton';
 
 import Gestures from './Gestures';
 import BasicPanGesture from './gestures/BasicPanGesture';
+import DraggableSwitchScreen from './gestures/DraggableSwitchScreen';
 
 export type StackNavigatorParamsList = {
   Home: undefined;
@@ -25,6 +26,7 @@ export type StackNavigatorParamsList = {
   AnimatedTabbar: undefined;
   AnimatedButton: undefined;
   BasicPanGesture: undefined;
+  DraggableSwitch: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -67,6 +69,10 @@ const Navigator = () => {
         <Stack.Screen name="AnimatedTabbar" component={AnimatedTabbar} />
         <Stack.Screen name="AnimatedButton" component={AnimatedButtonScreen} />
         <Stack.Screen name="BasicPanGesture" component={BasicPanGesture} />
+        <Stack.Screen
+          name="DraggableSwitch"
+          component={DraggableSwitchScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
