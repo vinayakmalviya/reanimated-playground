@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useTheme } from 'react-native-paper';
+import SplashScreen from 'react-native-splash-screen';
 
 import Home from './Home';
 
@@ -57,8 +58,12 @@ const Navigator = () => {
     ],
   );
 
+  const onReady = useCallback(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
-    <NavigationContainer theme={navigationTheme}>
+    <NavigationContainer theme={navigationTheme} onReady={onReady}>
       <Stack.Navigator
         headerMode="none"
         screenOptions={{
