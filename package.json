@@ -13,6 +13,7 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
+    "color-interpolate": "^1.0.5",
     "install": "^0.13.0",
     "npm": "^7.10.0",
     "react": "17.0.1",

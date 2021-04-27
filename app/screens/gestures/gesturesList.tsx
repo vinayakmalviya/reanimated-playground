@@ -7,6 +7,7 @@ const transitions: {
   { name: 'Basic Pan Gesture', navigate: 'BasicPanGesture' },
   { name: 'Draggable Switch', navigate: 'DraggableSwitch' },
   { name: 'Circular Slider', navigate: 'CircularSlider' },
+  { name: 'Gradient Slider', navigate: 'GradientSlider' },
 ];
 
 export default transitions;
