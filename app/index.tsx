@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import {
@@ -8,6 +9,14 @@ import {
 } from 'react-native-paper';
 
 import Navigator from './screens/Navigator';
+
+declare global {
+  namespace ReactNativePaper {
+    interface ThemeColors {
+      textLight: string;
+    }
+  }
+}
 
 const fontConfig = {
   default: {

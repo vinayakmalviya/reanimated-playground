@@ -7,6 +7,7 @@ import Caption from './Typography/Caption';
 import Button from './Button';
 import AnimatedButton from './Button/AnimatedButton';
 import CreditCard from './Cards/CreditCard';
+import VerticalCard from './Cards/VerticalCard';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
 import Tabbar from './Tabbar';
@@ -26,6 +27,7 @@ export {
   Button,
   AnimatedButton,
   CreditCard,
+  VerticalCard,
   Switch,
   Checkbox,
   Tabbar,

@@ -8,6 +8,7 @@ const transitions: {
   { name: 'Draggable Switch', navigate: 'DraggableSwitch' },
   { name: 'Circular Slider', navigate: 'CircularSlider' },
   { name: 'Gradient Slider', navigate: 'GradientSlider' },
+  { name: 'Card Swipe', navigate: 'CardSwipe' },
 ];
 
 export default transitions;
