@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import {
@@ -10,6 +9,7 @@ import {
 
 import Navigator from './screens/Navigator';
 
+/* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   namespace ReactNativePaper {
     interface ThemeColors {

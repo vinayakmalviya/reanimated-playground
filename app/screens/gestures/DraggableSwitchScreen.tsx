@@ -10,9 +10,9 @@ type NavigationProp = StackNavigationProp<
   'DraggableSwitch'
 >;
 
-type DraggableSwitchScreenProps = {
+interface DraggableSwitchScreenProps {
   navigation: NavigationProp;
-};
+}
 
 const DraggableSwitchScreen: React.FC<DraggableSwitchScreenProps> = ({
   navigation,

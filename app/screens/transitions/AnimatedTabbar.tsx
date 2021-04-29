@@ -11,9 +11,9 @@ type NavigationProp = StackNavigationProp<
   'AnimatedTabbar'
 >;
 
-type AnimatedTabbarProps = {
+interface AnimatedTabbarProps {
   navigation: NavigationProp;
-};
+}
 
 const AnimatedTabbar: React.FC<AnimatedTabbarProps> = ({ navigation }) => {
   const theme = useTheme();

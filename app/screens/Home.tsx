@@ -8,9 +8,9 @@ import { StackNavigatorParamsList } from './Navigator';
 
 type HomeNavigationProp = StackNavigationProp<StackNavigatorParamsList, 'Home'>;
 
-type HomeProps = {
+interface HomeProps {
   navigation: HomeNavigationProp;
-};
+}
 
 const Home: React.FC<HomeProps> = ({ navigation }) => {
   const theme = useTheme();

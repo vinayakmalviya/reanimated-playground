@@ -30,6 +30,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
   secondaryColor = '#31B4A9',
   onPress = () => null,
   children,
+  ...props
 }) => {
   const theme = useTheme();
   const animatedState = useSharedValue<number>(0);
@@ -72,7 +73,7 @@ const GestureButton: React.FC<GestureButtonProps> = ({
   }));
 
   return (
-    <View style={style}>
+    <View style={style} {...props}>
       <TapGestureHandler onGestureEvent={gestureHandler}>
         <Animated.View
           style={[

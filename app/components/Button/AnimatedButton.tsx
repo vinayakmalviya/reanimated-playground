@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect } from 'react';
 import {
-  StyleProp,
   StyleSheet,
   TextStyle,
   TouchableNativeFeedback,
-  ViewProps,
+  TouchableNativeFeedbackProps,
   ViewStyle,
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
@@ -20,12 +19,13 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import Body from '../Typography/Body';
 
-interface AnimatedButtonProps extends ViewProps {
+interface AnimatedButtonProps extends TouchableNativeFeedbackProps {
   loading?: boolean;
   fullWidth?: boolean;
   onPress?: () => void;
-  contentStyle?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
+  style?: ViewStyle;
+  contentStyle?: ViewStyle;
+  textStyle?: TextStyle;
 }
 
 const AnimatedIcon = Animated.createAnimatedComponent(MaterialCommunityIcons);
@@ -94,9 +94,10 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         },
         style,
         elevationStyle,
-      ]}
-      {...props}>
-      <TouchableNativeFeedback {...{ onPressIn, onPress, onPressOut }}>
+      ]}>
+      <TouchableNativeFeedback
+        {...{ onPressIn, onPress, onPressOut }}
+        {...props}>
         <Animated.View
           style={[
             {

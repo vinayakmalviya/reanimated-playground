@@ -25,9 +25,9 @@ type NavigationProp = StackNavigationProp<
   'CardSwipe'
 >;
 
-type CardSwipeProps = {
+interface CardSwipeProps {
   navigation: NavigationProp;
-};
+}
 
 const { width, height } = Dimensions.get('window');
 

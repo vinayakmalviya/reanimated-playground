@@ -11,21 +11,19 @@ type OpacityStyle = {
   opacity: number;
 };
 
-type AppbarProps =
-  | {
-      title: string;
-      subtitle?: string;
-      actions?: {
-        icon: string;
-        color?: string;
-        size?: number;
-        onPress?: () => void;
-      }[];
-      backAction?: () => void;
-      animatedStyle: Animated.AnimateStyle<AnimatedStyle>;
-      opacityStyle: Animated.AnimateStyle<OpacityStyle>;
-    }
-  | undefined;
+interface AppbarProps {
+  title: string;
+  subtitle?: string;
+  actions?: {
+    icon: string;
+    color?: string;
+    size?: number;
+    onPress?: () => void;
+  }[];
+  backAction?: () => void;
+  animatedStyle: Animated.AnimateStyle<AnimatedStyle>;
+  opacityStyle: Animated.AnimateStyle<OpacityStyle>;
+}
 
 export const APPBAR_HEIGHT = 56;
 

@@ -10,9 +10,9 @@ type NavigationProp = StackNavigationProp<
   'GradientSlider'
 >;
 
-type GradientSliderScreenProps = {
+interface GradientSliderScreenProps {
   navigation: NavigationProp;
-};
+}
 
 const { width } = Dimensions.get('window');
 

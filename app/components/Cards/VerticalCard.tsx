@@ -36,6 +36,7 @@ const VerticalCard: React.FC<VerticalCardProps> = ({
   content,
   translateX = { value: 0 },
   style,
+  ...props
 }) => {
   const theme = useTheme();
 
@@ -65,7 +66,8 @@ const VerticalCard: React.FC<VerticalCardProps> = ({
           flex: 1,
         },
         style,
-      ]}>
+      ]}
+      {...props}>
       <Image
         source={image}
         style={{ width: '100%', height: VERTICAL_CARD_HEIGHT / 1.48 }}

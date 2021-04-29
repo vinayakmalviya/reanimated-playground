@@ -35,6 +35,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   color = '#3253B6',
   backgroundCircleColor = '#CCCCCC',
   onChange = () => null,
+  ...props
 }) => {
   const theme = useTheme();
   const { cx, cy, r } = useMemo(
@@ -99,7 +100,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
 
   return (
     <PanGestureHandler onGestureEvent={gestureHandler}>
-      <Animated.View>
+      <Animated.View {...props}>
         <Svg width={size + knobSize} height={size + knobSize} style={style}>
           <Circle
             stroke={backgroundCircleColor}

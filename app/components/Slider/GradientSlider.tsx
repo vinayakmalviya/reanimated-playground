@@ -55,6 +55,7 @@ const GradientSlider: React.FC<GradientSliderProps> = ({
   gradientStart = '#3253B6',
   gradientEnd = 'rgb(255, 128, 171)',
   onChange = () => null,
+  ...props
 }) => {
   const theme = useTheme();
   const { cx, cy, r } = useMemo(
@@ -134,7 +135,7 @@ const GradientSlider: React.FC<GradientSliderProps> = ({
 
   return (
     <PanGestureHandler onGestureEvent={gestureHandler}>
-      <Animated.View>
+      <Animated.View {...props}>
         <Svg width={size + knobSize} height={size + knobSize} style={style}>
           <Defs>
             {arcs.map((_d, key) => {
