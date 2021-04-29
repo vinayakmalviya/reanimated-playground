@@ -30,6 +30,7 @@ const DraggableSwitch: React.FC<DraggableSwitchProps> = ({
   color,
   onChange = () => null,
   style,
+  ...props
 }) => {
   const theme = useTheme();
   const translateX = useSharedValue<number>(active ? size * 1.8 - size : 0);
@@ -107,7 +108,8 @@ const DraggableSwitch: React.FC<DraggableSwitchProps> = ({
         },
         style,
         animatedBackground,
-      ]}>
+      ]}
+      {...props}>
       <PanGestureHandler onGestureEvent={gestureHandler}>
         <Animated.View
           style={[

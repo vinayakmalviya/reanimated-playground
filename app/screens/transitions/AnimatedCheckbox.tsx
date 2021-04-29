@@ -11,9 +11,9 @@ type NavigationProp = StackNavigationProp<
   'AnimatedCheckbox'
 >;
 
-type AnimatedCheckboxProps = {
+interface AnimatedCheckboxProps {
   navigation: NavigationProp;
-};
+}
 
 const AnimatedCheckbox: React.FC<AnimatedCheckboxProps> = ({ navigation }) => {
   const theme = useTheme();

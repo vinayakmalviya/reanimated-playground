@@ -19,7 +19,7 @@ import Animated, {
 import Appbar, { APPBAR_HEIGHT } from '../Appbar';
 import clamp from '../../helpers/clamp';
 
-type ScreenContainerProps = {
+interface ScreenContainerProps {
   statusBarColor?: string;
   noScroll?: boolean;
   header?: {
@@ -33,7 +33,7 @@ type ScreenContainerProps = {
     backAction?: () => void;
   };
   style?: ViewStyle;
-};
+}
 
 const ScreenContainer: React.FC<ScreenContainerProps> = ({
   noScroll = false,

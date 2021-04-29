@@ -28,6 +28,7 @@ const Tabbar: React.FC<TabbarProps> = ({
   items,
   activeIndex,
   changeIndex,
+  ...props
 }) => {
   const theme = useTheme();
   const [centerActive, setCenterActive] = useState<boolean>(false);
@@ -41,7 +42,7 @@ const Tabbar: React.FC<TabbarProps> = ({
   }, [animatedActive, centerActive]);
 
   return (
-    <View>
+    <View {...props}>
       <Surface
         style={[
           {
@@ -65,7 +66,6 @@ const Tabbar: React.FC<TabbarProps> = ({
           />
         ))}
       </Surface>
-      {/* <View style={{ position: 'absolute', elevation: 5, overflow: 'visible' }}> */}
       {centerItems.map((item, index) => {
         const cy = -23 + (centerItems.length - index) * 4;
 
@@ -159,7 +159,6 @@ const Tabbar: React.FC<TabbarProps> = ({
           color="#FFFFFF"
         />
       </Animated.View>
-      {/* </View> */}
     </View>
   );
 };

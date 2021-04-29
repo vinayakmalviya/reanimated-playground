@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, TouchableWithoutFeedback, ViewProps } from 'react-native';
+import {
+  StyleSheet,
+  TouchableWithoutFeedback,
+  TouchableWithoutFeedbackProps,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { useTheme } from 'react-native-paper';
 import Animated, {
   interpolate,
@@ -11,11 +17,12 @@ import Animated, {
 } from 'react-native-reanimated';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-interface CheckboxProps extends ViewProps {
+interface CheckboxProps extends TouchableWithoutFeedbackProps {
   active?: boolean;
   size?: number;
   color?: string;
   darkIcon?: boolean;
+  style?: ViewStyle;
   onChange?: () => void;
 }
 
@@ -26,6 +33,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   darkIcon = false,
   onChange,
   style,
+  ...props
 }) => {
   const theme = useTheme();
   const animatedActive = useSharedValue<number>(active ? 1 : 0);
@@ -50,7 +58,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   }, [active, animatedActive]);
 
   return (
-    <TouchableWithoutFeedback onPress={onChange}>
+    <TouchableWithoutFeedback onPress={onChange} {...props}>
       <Animated.View
         style={[
           {

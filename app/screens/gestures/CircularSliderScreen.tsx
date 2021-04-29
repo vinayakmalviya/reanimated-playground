@@ -10,9 +10,9 @@ type NavigationProp = StackNavigationProp<
   'CircularSlider'
 >;
 
-type CircularSliderScreenProps = {
+interface CircularSliderScreenProps {
   navigation: NavigationProp;
-};
+}
 
 const { width } = Dimensions.get('window');
 

@@ -24,6 +24,7 @@ const Switch: React.FC<SwitchProps> = ({
   color,
   onChange,
   style,
+  ...props
 }) => {
   const theme = useTheme();
   const animatedActive = useSharedValue<number>(active ? 1 : 0);
@@ -73,7 +74,8 @@ const Switch: React.FC<SwitchProps> = ({
         },
         style,
         animatedBackground,
-      ]}>
+      ]}
+      {...props}>
       <TouchableWithoutFeedback onPress={onChange}>
         <Animated.View
           style={[

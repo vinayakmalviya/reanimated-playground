@@ -21,9 +21,9 @@ type NavigationProp = StackNavigationProp<
   'BasicPanGesture'
 >;
 
-type BasicPanGestureProps = {
+interface BasicPanGestureProps {
   navigation: NavigationProp;
-};
+}
 
 const { width, height } = Dimensions.get('window');
 

@@ -13,9 +13,9 @@ type GesturesNavigationProp = StackNavigationProp<
   'Gestures'
 >;
 
-type GesturesProps = {
+interface GesturesProps {
   navigation: GesturesNavigationProp;
-};
+}
 
 const Gestures: React.FC<GesturesProps> = ({ navigation }) => {
   const header = useMemo(

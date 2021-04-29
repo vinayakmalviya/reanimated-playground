@@ -13,9 +13,9 @@ type TransitionsNavigationProp = StackNavigationProp<
   'Transitions'
 >;
 
-type TransitionsProps = {
+interface TransitionsProps {
   navigation: TransitionsNavigationProp;
-};
+}
 
 const Transitions: React.FC<TransitionsProps> = ({ navigation }) => {
   const header = useMemo(

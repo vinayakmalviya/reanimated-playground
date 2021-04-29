@@ -15,9 +15,9 @@ type NavigationProp = StackNavigationProp<
   'AnimatedButton'
 >;
 
-type AnimatedButtonProps = {
+interface AnimatedButtonProps {
   navigation: NavigationProp;
-};
+}
 
 const AnimatedButtonScreen: React.FC<AnimatedButtonProps> = ({
   navigation,

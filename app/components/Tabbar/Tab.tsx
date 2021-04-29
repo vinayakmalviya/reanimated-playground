@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import {
   StyleSheet,
   TouchableNativeFeedback,
+  TouchableNativeFeedbackProps,
   View,
-  ViewProps,
+  ViewStyle,
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import Animated, {
@@ -17,16 +18,24 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import Caption from '../Typography/Caption';
 
-interface TabProps extends ViewProps {
+interface TabProps extends TouchableNativeFeedbackProps {
   name: string;
   icon: string;
   active: boolean;
   onPress: () => void;
+  style?: ViewStyle;
 }
 
 const AnimatedIcon = Animated.createAnimatedComponent(MaterialCommunityIcons);
 
-const Tab: React.FC<TabProps> = ({ name, icon, active, onPress }) => {
+const Tab: React.FC<TabProps> = ({
+  name,
+  icon,
+  active,
+  onPress,
+  style,
+  ...props
+}) => {
   const theme = useTheme();
   const animatedActive = useSharedValue<number>(0);
   const transition = useDerivedValue(() => {
@@ -52,8 +61,12 @@ const Tab: React.FC<TabProps> = ({ name, icon, active, onPress }) => {
   }));
 
   return (
-    <TouchableNativeFeedback onPress={onPress}>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <TouchableNativeFeedback onPress={onPress} {...props}>
+      <View
+        style={[
+          { flex: 1, alignItems: 'center', justifyContent: 'center' },
+          style,
+        ]}>
         <View>
           <AnimatedIcon
             name={icon}

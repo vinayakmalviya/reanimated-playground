@@ -11,9 +11,9 @@ type NavigationProp = StackNavigationProp<
   'AnimatedSwitch'
 >;
 
-type AnimatedSwitchProps = {
+interface AnimatedSwitchProps {
   navigation: NavigationProp;
-};
+}
 
 const AnimatedSwitch: React.FC<AnimatedSwitchProps> = ({ navigation }) => {
   const theme = useTheme();

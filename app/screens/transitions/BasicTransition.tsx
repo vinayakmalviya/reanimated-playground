@@ -18,9 +18,9 @@ type NavigationProp = StackNavigationProp<
   'BasicTransition'
 >;
 
-type BasicTransitionsProps = {
+interface BasicTransitionsProps {
   navigation: NavigationProp;
-};
+}
 
 const cards = [
   {
