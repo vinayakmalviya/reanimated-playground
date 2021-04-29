@@ -6,11 +6,16 @@ import Body from './Typography/Body';
 import Caption from './Typography/Caption';
 import Button from './Button';
 import AnimatedButton from './Button/AnimatedButton';
-import GestureButton from './Button/GestureButton';
 import CreditCard from './Cards/CreditCard';
+import VerticalCard from './Cards/VerticalCard';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
 import Tabbar from './Tabbar';
+
+import GestureButton from './Button/GestureButton';
+import DraggableSwitch from './Switch/DraggableSwitch';
+import CircularSlider from './Slider';
+import GradientSlider from './Slider/GradientSlider';
 
 export {
   ScreenContainer,
@@ -21,9 +26,13 @@ export {
   Caption,
   Button,
   AnimatedButton,
-  GestureButton,
   CreditCard,
+  VerticalCard,
   Switch,
   Checkbox,
   Tabbar,
+  GestureButton,
+  DraggableSwitch,
+  CircularSlider,
+  GradientSlider,
 };
